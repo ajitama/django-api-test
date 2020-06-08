@@ -17,7 +17,18 @@ from django.contrib import admin
 from django.urls import path, include
 
 from coupon.urls import router as coupon_router
+from rest_framework_jwt.views import obtain_jwt_token
+
+# test 
+from kanriman import views as kanri_views
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include(coupon_router.urls)),
-]
+    #url(r'^jwt-token', obtain_jwt_token),
+    path('jwt-token', obtain_jwt_token),
+
+    # test
+    path('ping', kanri_views.PingViewSet.as_view()),
+
+    ]
