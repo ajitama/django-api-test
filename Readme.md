@@ -10,12 +10,17 @@ ajitama@ajitama-srv:~$ python3 -m django --version
 
 
 ### インストールパッケージ
-apt install python3-pip  
+sudo apt install python3-pip  
+sudo apt install postgresql-client-common
+sudo apt install postgresql-client
+
 pip3 install Django  
 
 pip3 install djangorestframework  
 pip3 install djangorestframework-jwt # token 認証用  
 
+sudo apt install libpq-dev # psycopg2 インストール用ライブラリ
+pip3 install psycopg2 # postgresql接続用
 ### sample request
 
 - get api  
